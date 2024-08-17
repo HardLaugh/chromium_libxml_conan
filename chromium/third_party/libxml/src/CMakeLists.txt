@@ -221,11 +221,11 @@ else()
 	check_function_exists(time HAVE_TIME)
 	check_include_files(time.h HAVE_TIME_H)
 	check_include_files(unistd.h HAVE_UNISTD_H)
-	check_function_exists(va_copy HAVE_VA_COPY)
+	check_symbol_exists(va_copy stdarg.h HAVE_VA_COPY)
+	check_symbol_exists(__va_copy stdarg.h HAVE___VA_COPY)
 	check_function_exists(vfprintf HAVE_VFPRINTF)
 	check_function_exists(vsnprintf HAVE_VSNPRINTF)
 	check_function_exists(vsprintf HAVE_VSPRINTF)
-	check_function_exists(__va_copy HAVE___VA_COPY)
 	check_c_source_compiles("
 		#include <stdlib.h>
 		#include <iconv.h>
